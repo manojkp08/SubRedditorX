@@ -1,8 +1,7 @@
 praw
-tweepy
 pymongo
-redis
 python-dotenv
 selenium
 streamlit
 appium-python-client
+google-generativeai

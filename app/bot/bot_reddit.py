@@ -17,3 +17,7 @@ class RedditBot:
     def comment_on_post(self, post_url, comment_text):
         submission = self.reddit.submission(url=post_url)
         submission.reply(comment_text)
+
+    def like_post(self, post_url):
+        submission = self.reddit.submission(url=post_url)
+        submission.upvote()
