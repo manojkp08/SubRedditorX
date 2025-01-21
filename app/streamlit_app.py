@@ -65,12 +65,13 @@ if reddit_action == "Post to Subreddit":
     col1, col2 = st.columns([2, 1])
     
     with col1:
+        # Post type selection outside the form
+        post_type = st.select_slider(
+            "Select Post Type",
+            options=["Manual Post", "Post with GenAI"]
+        )
+        
         with st.form("post_form"):
-            post_type = st.select_slider(
-                "Select Post Type",
-                options=["Manual Post", "Post with GenAI"]
-            )
-            
             if post_type == "Manual Post":
                 subreddit_name = st.text_input("🔍 Subreddit Name", placeholder="e.g., Python")
                 title = st.text_input("📋 Post Title", placeholder="Enter your post title")
@@ -119,12 +120,13 @@ if reddit_action == "Post to Subreddit":
 elif reddit_action == "Comment on Post":
     st.markdown("<h2 class='subheader'>💬 Add Comment</h2>", unsafe_allow_html=True)
     
+    # Comment type selection outside the form
+    comment_type = st.select_slider(
+        "Select Comment Type",
+        options=["Manual Comment", "Comment with GenAI"]
+    )
+    
     with st.form("comment_form"):
-        comment_type = st.select_slider(
-            "Select Comment Type",
-            options=["Manual Comment", "Comment with GenAI"]
-        )
-        
         post_url = st.text_input("🔗 Post URL", placeholder="Enter the Reddit post URL")
         
         if comment_type == "Manual Comment":
