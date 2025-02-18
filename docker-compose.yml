@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+       
+  streamlit:
+    build:
+      context: .
+      dockerfile: Dockerfile.streamlit
+    ports:
+      - "8501:8501"
+    
